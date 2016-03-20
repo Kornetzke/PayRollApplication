@@ -26,6 +26,9 @@ namespace Payroll.Tests
             Assert.AreEqual(fullName, e.FullName);
 
             CheckEmployeePaymentTypes(typeof(SalariedClassification), typeof(HoldMethod), typeof(MonthlySchedule), e);
+
+            SalariedClassification sc = e.paymentClassification as SalariedClassification;
+            Assert.AreEqual(salary, sc.Salary);
         }
 
         [TestMethod]
@@ -44,6 +47,9 @@ namespace Payroll.Tests
             Assert.AreEqual(fullName, e.FullName);
             
             CheckEmployeePaymentTypes(typeof(HourlyClassification), typeof(HoldMethod), typeof(WeeklySchedule), e);
+
+            HourlyClassification h = e.paymentClassification as HourlyClassification;
+            Assert.AreEqual(hourlyRate, h.HourlyRate);
         }
         [TestMethod]
         public void AddCommissionEmployee()
@@ -63,6 +69,10 @@ namespace Payroll.Tests
             Assert.AreEqual(fullName, e.FullName);
 
             CheckEmployeePaymentTypes(typeof(CommissionedClassification), typeof(HoldMethod), typeof(BiweeklySchedule), e);
+            CommissionedClassification cc = e.paymentClassification as CommissionedClassification;
+
+            Assert.AreEqual(salary, cc.Salary);
+            Assert.AreEqual(commissionRate, cc.CommissionRate);
 
         }
 
