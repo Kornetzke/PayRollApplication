@@ -41,8 +41,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Employee.cs" />
+    <Compile Include="Database.cs" />
+    <Compile Include="IAffiliation.cs" />
+    <Compile Include="IPaymentClassification.cs" />
+    <Compile Include="IPaymentMethod.cs" />
+    <Compile Include="IPaymentSchedule.cs" />
+    <Compile Include="PaymentClassifications\CommissionedClassification.cs" />
+    <Compile Include="PaymentClassifications\HourlyClassification.cs" />
+    <Compile Include="PaymentClassifications\SalariedClassification.cs" />
+    <Compile Include="PaymentMethods\DirectMethod.cs" />
+    <Compile Include="PaymentMethods\HoldMethod.cs" />
+    <Compile Include="PaymentMethods\MailMethod.cs" />
+    <Compile Include="PaymentSchedules\BiweeklySchedule.cs" />
+    <Compile Include="PaymentSchedules\MonthlySchedule.cs" />
+    <Compile Include="PaymentSchedules\WeeklySchedule.cs" />
+    <Compile Include="Transactions\AddCommissionedEmployee.cs" />
+    <Compile Include="Transactions\AddEmployeeTransaction.cs" />
+    <Compile Include="Transactions\AddHourlyEmployee.cs" />
+    <Compile Include="Transactions\AddSalariedEmployee.cs" />
+    <Compile Include="Transactions\ITransaction.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
