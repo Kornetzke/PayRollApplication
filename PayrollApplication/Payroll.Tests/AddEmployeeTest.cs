@@ -10,6 +10,13 @@ namespace Payroll.Tests
     [TestClass]
     public class AddEmployeeTest
     {
+
+        [TestInitialize]
+        public void Init()
+        {
+            Database.ClearDatabase();
+        }
+
         [TestMethod]
         public void AddSalaryEmployee()
         {

@@ -21,9 +21,26 @@ namespace Payroll
             EmployeeDatabase.Add(e.Emplid, e);
         }
 
+        /// <summary>
+        /// Returns the Employee with the passed emplid value, if not found, method returns null
+        /// </summary>
+        /// <param name="emplid"></param>
+        /// <returns></returns>
         public static Employee GetEmployee(int emplid)
         {
-            return EmployeeDatabase[emplid];
+            Employee employee = null;
+            EmployeeDatabase.TryGetValue(emplid, out employee);
+            return employee;
+        }
+
+        public static void ClearDatabase()
+        {
+            EmployeeDatabase.Clear();
+        }
+
+        internal static void DeleteEmployee(int emplid)
+        {
+            EmployeeDatabase.Remove(emplid);
         }
     }
 }
